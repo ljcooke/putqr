@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
-require 'qrcat'
+require 'putqr'
 
-RSpec.describe QRCat::QRCode do
+RSpec.describe PutQR::QRCode do
   let(:qrcode) { described_class.new(content) }
 
   context 'with a short string of digits' do

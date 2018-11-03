@@ -3,8 +3,8 @@
 require 'base64'
 require 'rqrcode'
 
-module QRCat
-  # QRCode renderer.
+module PutQR
+  # Display a QR code in your terminal.
   class QRCode
     attr_reader :qrcode
 

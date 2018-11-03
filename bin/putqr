@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'qrcat'
+require 'putqr'
 
 if ARGV.any?
   content = ARGV.first
@@ -10,6 +10,6 @@ else
   content = STDIN.read
 end
 
-output = QRCat::QRCode.new(content).render
+output = PutQR::QRCode.new(content).render
 exit(1) if output.nil?
 puts output

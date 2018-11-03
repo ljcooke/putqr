@@ -1,10 +1,5 @@
-# qrcat
+# putqr
 
-Render a QR code from standard input.
+Display a QR code in your terminal.
 
 In iTerm2, the QR code is rendered as an inline image.
-
-## Acknowledgements
-
-Another (unrelated) project exists with the same name:
-[Yuya Takeyama's qrcat](https://github.com/yuya-takeyama/qrcat).

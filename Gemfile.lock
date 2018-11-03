@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    qrcat (0.1.0)
+    putqr (0.1.0)
       rqrcode (~> 0.10.1)
 
 GEM
@@ -45,7 +45,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  qrcat!
+  putqr!
   rspec
   rubocop
 
