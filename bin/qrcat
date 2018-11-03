@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+require 'rqrcode'
+
+def qrcode(content)
+  # Try each size until one fits
+  (1..40).each do |size|
+    begin
+      return RQRCode::QRCode.new(content, level: :h, size: size)
+    rescue RQRCode::QRCodeRunTimeError
+      next
+    end
+  end
+  nil
+end
+
+def ansi(qrcode)
+  qrcode.as_ansi
+end
+
+puts ansi qrcode $stdin.read
