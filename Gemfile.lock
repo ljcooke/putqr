@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    qrcat (0.1.0)
+      rqrcode
+
 GEM
   specs:
     ast (2.4.0)
@@ -25,7 +31,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rqrcode
+  qrcat!
   rubocop
 
 BUNDLED WITH

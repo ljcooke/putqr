@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-gem 'rqrcode'
+gemspec
 
 group :development do
   gem 'rubocop'
