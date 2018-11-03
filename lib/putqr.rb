@@ -38,6 +38,8 @@ module PutQR
     end
 
     class << self
+      private
+
       # Try each size until one fits
       def generate_qrcode(content)
         (min_qr_version(content.size)..40).each do |version|
