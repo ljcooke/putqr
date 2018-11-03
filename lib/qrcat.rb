@@ -38,16 +38,28 @@ module QRCat
     end
 
     class << self
+      # Try each size until one fits
       def generate_qrcode(content)
-        # Try each size until one fits
-        (1..40).each do |size|
+        (min_qr_version(content.size)..40).each do |version|
           begin
-            return RQRCode::QRCode.new(content, level: :h, size: size)
+            return RQRCode::QRCode.new(content, level: :h, size: version)
           rescue RQRCode::QRCodeRunTimeError
             next
           end
         end
         nil
+      end
+
+      # Skip the lower QR code versions where the input is known to be too
+      # long. These figures are based on the maximum number of characters
+      # that can be encoded for a numeric string with high error correction.
+      def min_qr_version(input_size)
+        if    input_size >= 2_524 then 36
+        elsif input_size >= 1_897 then 31
+        elsif input_size >=   969 then 21
+        elsif input_size >=   331 then 11
+        else 1
+        end
       end
     end
   end
