@@ -12,6 +12,10 @@ module QRCat
       @qrcode = QRCode.generate_qrcode(content)
     end
 
+    def valid?
+      !qrcode.nil?
+    end
+
     def render
       if ENV['TERM_PROGRAM'].start_with? 'iTerm'
         render_image_iterm2
@@ -21,10 +25,12 @@ module QRCat
     end
 
     def render_ansi
-      qrcode.as_ansi
+      qrcode.as_ansi if valid?
     end
 
     def render_image_iterm2
+      return nil unless valid?
+
       png = qrcode.as_png(size: 600)
       png_base64 = Base64.encode64(png.to_s).chomp
       options = 'inline=1'
