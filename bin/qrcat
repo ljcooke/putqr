@@ -10,4 +10,6 @@ else
   content = STDIN.read
 end
 
-puts QRCat::QRCode.new(content).render
+output = QRCat::QRCode.new(content).render
+exit(1) if output.nil?
+puts output
