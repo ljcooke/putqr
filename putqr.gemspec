@@ -11,8 +11,14 @@ Gem::Specification.new do |s|
   s.email       = 'putqr@liamcooke.com'
   s.homepage    = 'https://github.com/ljcooke/putqr'
 
-  s.files       = ['bin/putqr', 'lib/putqr.rb']
   s.executables = ['putqr']
+
+  s.files = [
+    'LICENSE',
+    'README.md',
+    'bin/putqr',
+    'lib/putqr.rb',
+  ]
 
   s.add_runtime_dependency 'rqrcode', '~> 0.10.1'
 end
