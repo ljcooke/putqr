@@ -8,14 +8,18 @@ module PutQR
   class QRCode
     attr_reader :qrcode
 
+    # Initialize the QR code with a string.
     def initialize(content)
       @qrcode = QRCode.generate_qrcode(content)
     end
 
+    # Can the string be encoded as a QR code?
     def valid?
       !qrcode.nil?
     end
 
+    # Render the QR code for display in the terminal.
+    # Returns a string.
     def render
       if ENV['TERM_PROGRAM'].start_with? 'iTerm'
         render_image_iterm2
@@ -24,10 +28,14 @@ module PutQR
       end
     end
 
+    # Render the QR code using ANSI escape codes.
+    # Returns a string.
     def render_ansi
       qrcode.as_ansi if valid?
     end
 
+    # Render the QR code as an inline image for iTerm2.
+    # Returns a string.
     def render_image_iterm2
       return nil unless valid?
 
