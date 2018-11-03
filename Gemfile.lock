@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     qrcat (0.1.0)
-      rqrcode
+      rqrcode (~> 0.10.1)
 
 GEM
   specs:

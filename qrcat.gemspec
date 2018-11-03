@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
   s.files       = ['bin/qrcat', 'lib/qrcat.rb']
   s.executables = ['qrcat']
 
-  s.add_runtime_dependency 'rqrcode'
+  s.add_runtime_dependency 'rqrcode', '~> 0.10.1'
 end
