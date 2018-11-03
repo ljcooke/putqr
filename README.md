@@ -7,7 +7,7 @@ the QR code will be displayed as an image.
 
 ## Install
 
-Install `putqr` from Rubygems:
+Install `putqr` from [RubyGems](https://rubygems.org/):
 
 ```
 gem install putqr
