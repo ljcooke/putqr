@@ -1,6 +1,11 @@
+lib = File.expand_path('lib', __dir__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'putqr/version'
+
 Gem::Specification.new do |s|
   s.name        = 'putqr'
-  s.version     = '0.1.0'
+  s.version     = PutQR::VERSION
   s.date        = '2018-11-03'
   s.license     = 'MIT'
 
@@ -18,6 +23,7 @@ Gem::Specification.new do |s|
     'README.md',
     'bin/putqr',
     'lib/putqr.rb',
+    'lib/putqr/version.rb',
   ]
 
   s.add_runtime_dependency 'rqrcode', '~> 0.10.1'

@@ -3,6 +3,8 @@
 require 'base64'
 require 'rqrcode'
 
+require 'putqr/version'
+
 module PutQR
   # Display a QR code in your terminal.
   class QRCode
