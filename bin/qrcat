@@ -3,6 +3,11 @@
 
 require 'qrcat'
 
-content = $stdin.read
+if ARGV.any?
+  content = ARGV.first
+  STDERR.puts 'warning: only encoding first argument' if ARGV.size > 1
+else
+  content = STDIN.read
+end
 
 puts QRCat::QRCode.new(content).render
