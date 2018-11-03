@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = 'qrcat@liamcooke.com'
   s.homepage    = 'https://github.com/ljcooke/qrcat'
 
-  s.files       = ['bin/qrcat']
+  s.files       = ['bin/qrcat', 'lib/qrcat.rb']
   s.executables = ['qrcat']
 
   s.add_runtime_dependency 'rqrcode'

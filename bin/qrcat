@@ -1,38 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'base64'
-require 'rqrcode'
+require 'qrcat'
 
-def qrcode(content)
-  # Try each size until one fits
-  (1..40).each do |size|
-    begin
-      return RQRCode::QRCode.new(content, level: :h, size: size)
-    rescue RQRCode::QRCodeRunTimeError
-      next
-    end
-  end
-  nil
-end
+content = $stdin.read
 
-def render_ansi(qrcode)
-  qrcode.as_ansi
-end
-
-def render_image_iterm2(qrcode)
-  png = qrcode.as_png(size: 600)
-  png_base64 = Base64.encode64(png.to_s).chomp
-  options = 'inline=1'
-  "\033]1337;File=#{options}:#{png_base64}\007"
-end
-
-def render(qrcode)
-  if ENV['TERM_PROGRAM'].start_with? 'iTerm'
-    render_image_iterm2 qrcode
-  else
-    render_ansi qrcode
-  end
-end
-
-puts render qrcode $stdin.read
+puts QRCat::QRCode.new(content).render
