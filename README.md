@@ -7,6 +7,8 @@ Display a QR code in your terminal.
 If you're using [iTerm2](https://iterm2.com) on macOS,
 the QR code will be displayed as an image.
 
+![Example: putqr https://example.com](images/example.png)
+
 ## Install
 
 Install `putqr` from [RubyGems](https://rubygems.org/):
