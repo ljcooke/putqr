@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'base64'
 require 'rqrcode'
 
@@ -14,19 +16,23 @@ def qrcode(content)
   nil
 end
 
-def ansi(qrcode)
+def render_ansi(qrcode)
   qrcode.as_ansi
 end
 
-def iterm2_image(qrcode)
+def render_image_iterm2(qrcode)
   png = qrcode.as_png(size: 600)
   png_base64 = Base64.encode64(png.to_s).chomp
-  options = "inline=1"
+  options = 'inline=1'
   "\033]1337;File=#{options}:#{png_base64}\007"
 end
 
-if ENV['TERM_PROGRAM'] == 'iTerm.app'
-  puts iterm2_image qrcode $stdin.read
-else
-  puts ansi qrcode $stdin.read
+def render(qrcode)
+  if ENV['TERM_PROGRAM'].start_with? 'iTerm'
+    render_image_iterm2 qrcode
+  else
+    render_ansi qrcode
+  end
 end
+
+puts render qrcode $stdin.read
