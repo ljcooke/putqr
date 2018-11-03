@@ -1,5 +1,7 @@
 # putqr
 
+[![Gem Version](https://badge.fury.io/rb/putqr.svg)](https://rubygems.org/gems/putqr)
+
 Display a QR code in your terminal.
 
 If you're using [iTerm2](https://iterm2.com) on macOS,
