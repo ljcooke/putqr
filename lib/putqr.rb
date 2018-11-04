@@ -47,8 +47,8 @@ module PutQR
 
       # tmux requires some extra work for unrecognised escape code sequences
       screen = ENV['TERM'].start_with? 'screen'
-      prefix = screen ? "\033Ptmux;\033\033]" : "\033]"
-      suffix = screen ? "\007\033\\" : "\007"
+      prefix = screen ? "\ePtmux;\e\e]" : "\e]"
+      suffix = screen ? "\a\e\\" : "\a"
 
       png = qrcode.as_png(size: 600)
       png_base64 = Base64.encode64(png.to_s).chomp
