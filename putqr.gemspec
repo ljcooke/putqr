@@ -14,7 +14,14 @@ Gem::Specification.new do |s|
 
   s.authors     = ['Liam Cooke']
   s.email       = 'putqr@liamcooke.com'
-  s.homepage    = 'https://github.com/ljcooke/putqr'
+  s.homepage    = 'https://liamcooke.com/code/putqr/'
+  s.metadata    = {
+    'bug_tracker_uri' => 'https://github.com/ljcooke/putqr/issues',
+    'changelog_uri' => 'https://github.com/ljcooke/putqr/blob/master/CHANGELOG.md',
+    'documentation_uri' => 'https://www.rubydoc.info/gems/putqr',
+    'homepage_uri' => 'https://liamcooke.com/code/putqr/',
+    'source_code_uri' => 'https://github.com/ljcooke/putqr',
+  }
 
   s.executables = ['putqr']
 
