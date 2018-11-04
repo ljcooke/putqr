@@ -11,4 +11,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial release. Generate a QR code and print it in the terminal.
 - Detect iTerm2 and display the QR code as an inline image.
 
-<!-- [Unreleased]: https://github.com/ljcooke/putqr/compare/v0.1.0...HEAD -->
+[Unreleased]: https://github.com/ljcooke/putqr/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/ljcooke/putqr/compare/59b73e62192b...v0.1.0
