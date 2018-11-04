@@ -20,7 +20,7 @@ def parse_arguments
     STDERR.puts 'warning: only encoding first message argument' if ARGV.size > 1
     ARGV.first
   else
-    STDIN.read
+    STDIN.read.chomp
   end
 end
 
