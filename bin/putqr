@@ -1,15 +1,42 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'optparse'
 require 'putqr'
 
-if ARGV.any?
-  content = ARGV.first
-  STDERR.puts 'warning: only encoding first argument' if ARGV.size > 1
-else
-  content = STDIN.read
+def parse_options
+  {}.tap do |options|
+    OptionParser.new do |opts|
+      opts.banner = 'Usage: putqr [options] [message]'
+      opts.on('--[no-]image', 'display as an image (on by default if supported)') do |image|
+        options[:image] = image
+      end
+    end.parse!
+  end
 end
 
-output = PutQR::QRCode.new(content).render
+def parse_arguments
+  if ARGV.any?
+    STDERR.puts 'warning: only encoding first message argument' if ARGV.size > 1
+    ARGV.first
+  else
+    STDIN.read
+  end
+end
+
+def render(message, options)
+  qrcode = PutQR::QRCode.new(message)
+
+  case options[:image]
+  when true then qrcode.render_image
+  when false then qrcode.render_ansi
+  else qrcode.render
+  end
+end
+
+options = parse_options
+message = parse_arguments
+output = render(message, options)
+
 exit(1) if output.nil?
 puts output

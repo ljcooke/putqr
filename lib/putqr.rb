@@ -20,7 +20,7 @@ module PutQR
       !qrcode.nil?
     end
 
-    # Render the QR code for display in the terminal.
+    # Render the QR code using the best method available for the terminal.
     # Returns a string.
     def render
       if ENV['TERM_PROGRAM'].start_with? 'iTerm'
@@ -34,6 +34,12 @@ module PutQR
     # Returns a string.
     def render_ansi
       qrcode.as_ansi if valid?
+    end
+
+    # Render the QR code as an inline image.
+    # Returns a string.
+    def render_image
+      render_image_iterm2
     end
 
     # Render the QR code as an inline image for iTerm2.
