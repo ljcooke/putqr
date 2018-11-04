@@ -4,16 +4,30 @@
 require 'optparse'
 require 'putqr'
 
+def print_version
+  puts "putqr #{PutQR::VERSION} (#{PutQR::DATE})"
+end
+
+# rubocop:disable Metrics/MethodLength
 def parse_options
   {}.tap do |options|
     OptionParser.new do |opts|
       opts.banner = 'Usage: putqr [options] [message]'
-      opts.on('--[no-]image', 'display as an image (on by default if supported)') do |image|
+
+      opts.on('--[no-]image',
+              'display as an image (on by default if supported)') do |image|
         options[:image] = image
+      end
+
+      opts.on('--version',
+              'print the version') do
+        print_version
+        exit
       end
     end.parse!
   end
 end
+# rubocop:enable Metrics/MethodLength
 
 def parse_arguments
   if ARGV.any?

@@ -6,7 +6,7 @@ require 'putqr/version'
 Gem::Specification.new do |s|
   s.name        = 'putqr'
   s.version     = PutQR::VERSION
-  s.date        = '2018-11-03'
+  s.date        = PutQR::DATE
   s.license     = 'MIT'
 
   s.summary     = 'Displays a QR code in your terminal.'
