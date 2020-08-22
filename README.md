@@ -1,3 +1,7 @@
+This project has moved to Sourcehut: <https://git.sr.ht/~ljc/putqr>
+
+---
+
 # putqr
 
 [![Gem Version](https://badge.fury.io/rb/putqr.svg)](https://rubygems.org/gems/putqr)
