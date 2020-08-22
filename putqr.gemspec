@@ -16,11 +16,11 @@ Gem::Specification.new do |s|
   s.email       = 'putqr@liamcooke.com'
   s.homepage    = 'https://liamcooke.com/code/putqr/'
   s.metadata    = {
-    'bug_tracker_uri' => 'https://github.com/ljcooke/putqr/issues',
-    'changelog_uri' => 'https://github.com/ljcooke/putqr/blob/master/CHANGELOG.md',
+    # 'bug_tracker_uri' => '',
+    'changelog_uri' => 'https://git.sr.ht/~ljc/putqr/tree/main/CHANGELOG.md',
     'documentation_uri' => 'https://www.rubydoc.info/gems/putqr',
     'homepage_uri' => 'https://liamcooke.com/code/putqr/',
-    'source_code_uri' => 'https://github.com/ljcooke/putqr',
+    'source_code_uri' => 'https://git.sr.ht/~ljc/putqr',
   }
 
   s.executables = ['putqr']

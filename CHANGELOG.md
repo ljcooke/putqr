@@ -28,6 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Detect iTerm2 and display the QR code as an inline image.
 
 
-[Unreleased]: https://github.com/ljcooke/putqr/compare/v0.2.0...HEAD
-[0.2.0]: https://github.com/ljcooke/putqr/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/ljcooke/putqr/compare/59b73e62192b...v0.1.0
+[Unreleased]: https://git.sr.ht/~ljc/putqr/log
+[0.2.0]: https://git.sr.ht/~ljc/putqr/log/v0.2.0
+[0.1.0]: https://git.sr.ht/~ljc/putqr/log/v0.1.0
