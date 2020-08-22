@@ -33,10 +33,10 @@ putqr < example.txt
 
 ## Development
 
-To run the latest source code, check out the repository from GitHub:
+To run the latest source code, check out the Git repository:
 
 ```
-git clone https://github.com/ljcooke/putqr.git
+git clone https://git.sr.ht/~ljc/putqr
 ```
 
 Install the dependencies using Bundler:
